@@ -93,8 +93,7 @@ div {
         border-bottom-color: #fff; }
 
 #sidebar {
-  border-left: 1px solid #ddd;
-  padding-left: 35px;
+  padding-right: 35px;
   margin-top: 40px;
   padding-bottom: 20px;
   word-wrap: break-word; }
@@ -328,8 +327,7 @@ div {
   padding: .8em 0 3.6em;
   margin-top: 1em;
   line-height: 2.5;
-  color: #6E7173;
-  text-align: center; }
+  color: #6E7173; }
   #footer span {
     font-size: .9em; }
 
@@ -732,7 +730,7 @@ pre {
   color: #444;
   margin: -10px 0;
   padding: 5px 10px;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
   border-radius: 5px;
   float: right; }
   .readmore a:after {
