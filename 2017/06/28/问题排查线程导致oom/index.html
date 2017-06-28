@@ -29,16 +29,20 @@ s.parentNode.insertBefore(hm, s);
 <blockquote>
 <p>注意，greys默认不会增强系统的类</p>
 </blockquote>
-<ol>
+<ul>
 <li>打开系统类增强：</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">options unsafe true</div></pre></td></tr></table></figure>
-<ol>
+<ul>
 <li>跟踪堆栈</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ga?&gt;stack java.util.concurrent.Executors defaultThreadFactory</div><div class="line">Press Ctrl+D to abort.</div><div class="line">Affect(class-cnt:1 , method-cnt:1) cost in 50 ms.</div><div class="line">thread_name=&quot;Thread-0&quot; thread_id=0x8;is_daemon=false;priority=5;</div><div class="line">    @java.util.concurrent.Executors.defaultThreadFactory(Executors.java:-1)</div><div class="line">        at java.util.concurrent.ThreadPoolExecutor.&lt;init&gt;(ThreadPoolExecutor.java:1198)</div><div class="line">        at java.util.concurrent.Executors.newFixedThreadPool(Executors.java:89)</div><div class="line">        at com.vdian.lishoubo.demo.threadpool.ThreadPoolCreator.createNewPool(ThreadPoolCreator.java:25)</div><div class="line">        at com.vdian.lishoubo.demo.threadpool.ThreadPoolCreator$1.run(ThreadPoolCreator.java:17)</div></pre></td></tr></table></figure>
-<ol>
+<ul>
 <li>别忘了reset回来，取消增强</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reset</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>使用线程池的时候，一定要设置名字</li>
+<li>如果真遇到这种问题，可以使用greys来排查，毕竟greys不需要写脚本，但是，注意greys默认没有开启系统类增强</li>
+</ol>
 </div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://lishoubo.github.io/2017/06/28/问题排查线程导致oom/" data-id="cj4gfr8o9000dyu3khbxwqhs8" class="article-share-link">分享到</a><div class="tags"><a href="/tags/问题排查/">问题排查</a></div><div class="post-nav"><a href="/2017/06/25/问题排查RT拉长/" class="next">问题排查RT拉长</a></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© 如果，我有能力，可以让时间倒流。。。 </div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
