@@ -58,7 +58,7 @@ s.parentNode.insertBefore(hm, s);
 </blockquote>
 <p>看起来两者差别不大啊。又看了下相关文档，觉得偏向锁优势肯定不小，问题应该是我的压测方式不对。仔细看了下压测代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@Threads(1)</div><div class="line">@Warmup(iterations = 5)</div></pre></td></tr></table></figure>
-<p>我觉得问题应该出在这里，jmh预热和实际跑的线程可能不是一个，虽然线程数指定的是一个。里面又写一个一份代码：</p>
+<p>我觉得问题应该出在这里，jmh预热和实际跑的线程可能不是一个，虽然线程数指定的是一个。于是又写一份代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">new Thread(new Runnable() &#123;</div><div class="line">    @Override</div><div class="line">    public void run() &#123;</div><div class="line">        /**</div><div class="line">         * warm up</div><div class="line">         */</div><div class="line">        lockBench.doRun();</div><div class="line">        barrier.await();</div><div class="line">        /**</div><div class="line">         * 执行测试</div><div class="line">         */</div><div class="line">        lockBench.doRun();</div><div class="line">        barrier.await();</div><div class="line">    &#125;</div><div class="line">&#125;).start();</div></pre></td></tr></table></figure>
 <p>不使用jmh，而是自己起一个单独的线程压测，再对比下：</p>
 <blockquote>
