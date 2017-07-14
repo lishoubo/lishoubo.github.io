@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="中间件, 高可用, 架构, 读书"><title>ParNewGC的一些问题 | Lost</title><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script>var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?5c504f7ca80d4d57db5434656761512d";
+var s = document.getElementsByTagName("script")[0]; 
+s.parentNode.insertBefore(hm, s);
+})();
+</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">ParNewGC的一些问题</h1><a id="logo" href="/.">Lost</a><p class="description">朽骨暗夜，侯多时，你已徘徊多远?</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/favorite/"><i class="fa fa-star"> 收藏</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://lishoubo.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/思考/">思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/架构/" style="font-size: 15px;">架构</a> <a href="/tags/GC/" style="font-size: 15px;">GC</a> <a href="/tags/内存/" style="font-size: 15px;">内存</a> <a href="/tags/netty/" style="font-size: 15px;">netty</a> <a href="/tags/问题排查/" style="font-size: 15px;">问题排查</a> <a href="/tags/学习/" style="font-size: 15px;">学习</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/性能/" style="font-size: 15px;">性能</a> <a href="/tags/高可用/" style="font-size: 15px;">高可用</a> <a href="/tags/思考/" style="font-size: 15px;">思考</a> <a href="/tags/科幻/" style="font-size: 15px;">科幻</a> <a href="/tags/心理/" style="font-size: 15px;">心理</a> <a href="/tags/一般/" style="font-size: 15px;">一般</a> <a href="/tags/推荐/" style="font-size: 15px;">推荐</a> <a href="/tags/历史/" style="font-size: 15px;">历史</a> <a href="/tags/人类/" style="font-size: 15px;">人类</a> <a href="/tags/小说/" style="font-size: 15px;">小说</a> <a href="/tags/思维/" style="font-size: 15px;">思维</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/10/性能优化-偏向锁/">性能优化-偏向锁</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/读书－奇妙的思维实验/">读书－奇妙的思维实验</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/读书-第三种黑猩猩/">读书-第三种黑猩猩</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/性能分析工具TProfiler/">性能分析工具TProfiler</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/高并发统计qps/">高并发统计qps</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/02/读书－人人都有妄想症/">读书－人人都有妄想症</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/02/读书－圣经故事－以色列系列/">读书－圣经故事－以色列系列</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/28/问题排查线程导致oom/">问题排查线程导致oom</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/问题排查RT拉长/">问题排查RT拉长</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/11/MQ主备方案/">MQ主备方案</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 链接</i></div><ul></ul><a href="http://jm.taobao.org" title="阿里中间件团队博客" target="_blank">阿里中间件团队博客</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">ParNewGC的一些问题</h1><div class="post-meta">Apr 14, 2017<span> | </span><span class="category"><a href="/categories/技术/">技术</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><div class="post-content"><p>最近排查了一些FullGC的问题，就顺带着把Java的GC理一下, 本文捡一些ParNewGC的内容看看。</p>
+<h3 id="日志内容"><a href="#日志内容" class="headerlink" title="日志内容"></a>日志内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">2017-04-13T10:56:37.593+0800: 14084483.509: [GC 14084483.509: [ParNew: 1703042K-&gt;29303K(1887488K), 0.0293770 secs] 2070605K-&gt;397097K(5033216K), 0.0297680 secs] [Times: user=0.11 sys=0.00, real=0.03 secs]</div></pre></td></tr></table></figure>
+<p>ParNewGC的日志包括：</p>
+<ul>
+<li>GC开始时间</li>
+<li>GC算法类型</li>
+<li>GC前后young及整个Heap的使用量的变化</li>
+<li>GC耗时</li>
+</ul>
+<p>观察ParNewGC的日志一般要注意：</p>
+<ol>
+<li>频率：我们网关的minor gc一般是每20s一次</li>
+<li>回收的内存变化：观察每次回收后young 区是不是基本被清理</li>
+<li>耗时：基本在ms级别</li>
+</ol>
+<h3 id="JVM内存分配"><a href="#JVM内存分配" class="headerlink" title="JVM内存分配"></a>JVM内存分配</h3><p>我们基本上都知道eden，s0,s1,这些都是Java对堆区的分层划分。但是，Java在内存分配的时候还做了一些其他优化。</p>
+<p>观察下面的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">private static class Foo &#123;</div><div class="line">    private int x;</div><div class="line">    private static int counter;</div><div class="line"></div><div class="line">    public Foo() &#123;</div><div class="line">        x = (++counter);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//测试代码</div><div class="line"></div><div class="line">for (int n = 0; n &lt; nThreads; n++) &#123;</div><div class="line">    new Thread(new Runnable() &#123;</div><div class="line">        @Override</div><div class="line">        public void run() &#123;</div><div class="line">            waitBarrier(cyclicBarrier);</div><div class="line"></div><div class="line">            for (int i = 0; i &lt; total; ++i) &#123;</div><div class="line">                Foo foo = new Foo();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            waitBarrier(cyclicBarrier);</div><div class="line">        &#125;</div><div class="line">    &#125;).start();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>通过两种方式进行测试, 方式一：开启<strong>逃逸分析</strong>,方法二：关闭逃逸分析. （通过打开或者关闭XX:+DoEscapeAnalysis）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -XX:+PrintGCApplicationConcurrentTime -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDetails -XX:+PrintSafepointStatistics -XX:PrintSafepointStatisticsCount=1 -Xloggc:/tmp/logs/gc.log -XX:+PrintGCDateStamps -verbose:gc -XX:+UnlockDiagnosticVMOptions -XX:-DisplayVMOutput -XX:+LogVMOutput -XX:LogFile=/tmp/logs/vm.log -server -Xms512m -Xmx512m -Xmn128m -XX:+UseConcMarkSweepGC  -XX:+DoEscapeAnalysis  -jar target/demo-1.0-SNAPSHOT.jar</div></pre></td></tr></table></figure>
+<p>观察结果：</p>
+<blockquote>
+<p>打开逃逸分析：time:601</p>
+<p>关闭逃逸分析：time:192199</p>
+</blockquote>
+<p>差距大吧？背后的原理就是栈上分配</p>
+<h4 id="逃逸分析和栈上分配"><a href="#逃逸分析和栈上分配" class="headerlink" title="逃逸分析和栈上分配"></a>逃逸分析和栈上分配</h4><p>Java的JIT会对热点代码进行优化，优化的一个方面就是进行逃逸分析，如果代码不存在逃逸行为：</p>
+<ol>
+<li>方法逃逸：当一个对象在方法中定义之后，作为参数传递到其它方法中；</li>
+<li>线程逃逸：如类变量或实例变量，可能被其它线程访问到；</li>
+</ol>
+<p>那么，JIT就会进行一系列的优化:</p>
+<ol>
+<li>同步消除: 消除无意义的加锁</li>
+<li>栈上分配：如果要分配的对象比较小，就会在栈空间分配</li>
+</ol>
+<p>等等，关于JIT的文章可以<a href="https://www.ibm.com/developerworks/cn/java/j-lo-just-in-time/index.html" target="_blank" rel="external">参考</a></p>
+<h4 id="TLAB"><a href="#TLAB" class="headerlink" title="TLAB"></a>TLAB</h4><p>接着上面的例子，在运行的时候添加参数：XX:-UseTLAB<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -XX:+PrintGCApplicationConcurrentTime -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDetails -XX:+PrintSafepointStatistics -XX:PrintSafepointStatisticsCount=1 -Xloggc:/tmp/logs/gc.log -XX:+PrintGCDateStamps -verbose:gc -XX:+UnlockDiagnosticVMOptions -XX:-DisplayVMOutput -XX:+LogVMOutput -XX:LogFile=/tmp/logs/vm.log -server -Xms512m -Xmx512m -Xmn128m -XX:+UseConcMarkSweepGC  -XX:-DoEscapeAnalysis  -XX:-UseTLAB -jar target/demo-1.0-SNAPSHOT.jar</div></pre></td></tr></table></figure></p>
+<p>结果：</p>
+<blockquote>
+<p>time:2219433</p>
+</blockquote>
+<p>再运行一遍，发现更慢了，那TLAB是干嘛的？</p>
+<p>简单讲，TLAB就是jvm在eden区为每个线程拿出一块内存使用，因为每个线程单独一个，所以分配的时候不存在竞争，速度自然就快。要注意的是：TLAB适合小对象，如果对象比较大，就会在eden区申请，并且总体上有容量限制，默认为eden的1%。</p>
+<h3 id="ParNewGC过程"><a href="#ParNewGC过程" class="headerlink" title="ParNewGC过程"></a>ParNewGC过程</h3><p>大概过程如下：</p>
+<ol>
+<li>从root对象开始标记所有活的对象. GC Roots的节点主要在全局性的引用（例如常量或类静态属性）与执行上下文（例如栈帧中的本地变量表）</li>
+<li>处理Card Table。Card Table记录了old区到young区的引用</li>
+<li>处理reference：java出了强引用之外还有好几种引用</li>
+</ol>
+<p>可以作为GC root的有：</p>
+<blockquote>
+<p>Class - 由系统类加载器(system class loader)加载的对象，这些类是不能够被回收的，他们可以以静态字段的方式保存持有其它对象。我们需要注意的一点就是，通过用户自定义的类加载器加载的类，除非相应的java.lang.Class实例以其它的某种（或多种）方式成为roots，否则它们并不是roots，.</p>
+<p>Thread - 活着的线程</p>
+<p>Stack Local - Java方法的local变量或参数</p>
+<p>JNI Local - JNI方法的local变量或参数</p>
+<p>JNI Global - 全局JNI引用</p>
+<p>Monitor Used - 用于同步的监控对象</p>
+<p>Held by JVM - 用于JVM特殊目的由GC保留的对象，但实际上这个与JVM的实现是有关的。可能已知的一些类型是：系统类加载器、一些JVM知道的重要的异常类、一些用于处理异常的预分配对象以及一些自定义的类加载器等。然而，JVM并没有为这些对象提供其它的信息，因此就只有留给分析分员去确定哪些是属于”JVM持有”的了。</p>
+</blockquote>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="PrintReferenceGC"><a href="#PrintReferenceGC" class="headerlink" title="PrintReferenceGC"></a>PrintReferenceGC</h4><p>统计younggc对reference的处理耗时，用于排查young gc拉长的场景</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2017-07-14T17:47:45.276-0800: 5.617: [GC2017-07-14T17:47:45.276-0800: 5.617: [ParNew2017-07-14T17:47:45.278-0800: 5.619: [SoftReference, 0 refs, 0.0000930 secs]2017-07-14T17:47:45.278-0800: 5.619: [WeakReference, 0 refs, 0.0000110 secs]2017-07-14T17:47:45.278-0800: 5.619: [FinalReference, 0 refs, 0.0000090 secs]2017-07-14T17:47:45.278-0800: 5.619: [PhantomReference, 0 refs, 0 refs, 0.0000080 secs]2017-07-14T17:47:45.278-0800: 5.619: [JNI Weak Reference, 0.0000340 secs]: 104960K-&gt;2K(118016K), 0.0017400 secs] 105217K-&gt;259K(511232K), 0.0018410 secs] [Times: user=0.00 sys=0.00, real=0.00 secs]</div></pre></td></tr></table></figure>
+<h4 id="StringTable造成young-gc拉长"><a href="#StringTable造成young-gc拉长" class="headerlink" title="StringTable造成young gc拉长"></a>StringTable造成young gc拉长</h4><p>StringTable默认分配在heap里面而不是perm里，young gc不会对perm做回收，但会扫描StringTable，保证处于新生代的String不会被回收掉，所以，如果StringTable过大就会拉长young gc rt</p>
+<h4 id="SystemDictionary造成young-gc拉长"><a href="#SystemDictionary造成young-gc拉长" class="headerlink" title="SystemDictionary造成young gc拉长"></a>SystemDictionary造成young gc拉长</h4><p>SystemDictionary里面记录了class和classloader的对应关系，SystemDictionary作为GC root的一部分，而young gc并不会对类进行卸载，所以，如果SystemDictionary变大，young gc就会拉长。</p>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://lishoubo.github.io/2017/04/14/ParNewGC的一些问题/" data-id="cj53pp2th0002k4s6z03r4emq" class="article-share-link">分享到</a><div class="tags"><a href="/tags/GC/">GC</a><a href="/tags/内存/">内存</a></div><div class="post-nav"><a href="/2017/04/28/架构-画几张架构图/" class="pre">架构-画几张架构图</a><a href="/2017/03/21/netty-entry-fgc/" class="next">netty-entry-fgc</a></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© 如果，我有能力，可以让时间倒流。。。 </div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
