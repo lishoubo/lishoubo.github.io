@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="中间件, 高可用, 架构, 读书"><title>关于分布式锁 | Lost</title><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script>var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?5c504f7ca80d4d57db5434656761512d";
+var s = document.getElementsByTagName("script")[0]; 
+s.parentNode.insertBefore(hm, s);
+})();
+</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">关于分布式锁</h1><a id="logo" href="/.">Lost</a><p class="description">朽骨暗夜，侯多时，你已徘徊多远?</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/favorite/"><i class="fa fa-star"> 收藏</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://lishoubo.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/思考/">思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/性能/" style="font-size: 15px;">性能</a> <a href="/tags/架构/" style="font-size: 15px;">架构</a> <a href="/tags/GC/" style="font-size: 15px;">GC</a> <a href="/tags/内存/" style="font-size: 15px;">内存</a> <a href="/tags/分布式/" style="font-size: 15px;">分布式</a> <a href="/tags/学习/" style="font-size: 15px;">学习</a> <a href="/tags/netty/" style="font-size: 15px;">netty</a> <a href="/tags/问题排查/" style="font-size: 15px;">问题排查</a> <a href="/tags/思考/" style="font-size: 15px;">思考</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/高可用/" style="font-size: 15px;">高可用</a> <a href="/tags/心理/" style="font-size: 15px;">心理</a> <a href="/tags/一般/" style="font-size: 15px;">一般</a> <a href="/tags/推荐/" style="font-size: 15px;">推荐</a> <a href="/tags/历史/" style="font-size: 15px;">历史</a> <a href="/tags/人类/" style="font-size: 15px;">人类</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/小说/" style="font-size: 15px;">小说</a> <a href="/tags/思维/" style="font-size: 15px;">思维</a> <a href="/tags/科幻/" style="font-size: 15px;">科幻</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/17/关于分布式锁/">关于分布式锁</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/10/性能优化-偏向锁/">性能优化-偏向锁</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/读书－奇妙的思维实验/">读书－奇妙的思维实验</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/读书-第三种黑猩猩/">读书-第三种黑猩猩</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/性能分析工具TProfiler/">性能分析工具TProfiler</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/高并发统计qps/">高并发统计qps</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/02/读书－人人都有妄想症/">读书－人人都有妄想症</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/02/读书－圣经故事－以色列系列/">读书－圣经故事－以色列系列</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/28/问题排查线程导致oom/">问题排查线程导致oom</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/问题排查RT拉长/">问题排查RT拉长</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 链接</i></div><ul></ul><a href="http://jm.taobao.org" title="阿里中间件团队博客" target="_blank">阿里中间件团队博客</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">关于分布式锁</h1><div class="post-meta">Jul 17, 2017<span> | </span><span class="category"><a href="/categories/技术/">技术</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><div class="post-content"><p>看了两篇文章：<a href="https://mp.weixin.qq.com/s/JTsJCDuasgIJ0j95K8Ay8w" target="_blank" rel="external">1</a>,<a href="https://mp.weixin.qq.com/s/4CUe7OpM6y1kQRK8TOC_qQ" target="_blank" rel="external">2</a>,主题是“基于Redis的分布式锁到底安全吗？”，作者翻译了分布式大神Martin Kleppmann和Redis的作者antirez之间就发生过一场争论，等有时间我也去看看原文，这里先总结一下文章里面的主要观点，以及关于分布式锁和fencing机制的几种实现。</p>
+<p>看完后，我觉的Martin大神的几句话让我印象深刻，写在前面：</p>
+<ul>
+<li>Martin指出，RedLock本质上是建立一个同步模型基础上，而<strong>好的分布式算法应该基于异步模型（asynchronous model）</strong>，算法的安全性不应该依赖于任何记时假设。在异步模型中，进程可能pause任意长时间，消息可能延迟，可能丢失，系统时间也可能出错（我遇到时钟漂移的问题），一个好的分布式算法，即使在非常极端的情况下，这些因素应该影响算法的安全性（safty property），只可能影响它的活性（liveness property），也就说好的算法不能给出错误的结果，顶多不能再有限的时间给出结果而已，像paxos，raft等</li>
+<li>Martin指出，即使我们拥有一个完美实现的分布式锁方案（带自动过期），在没有共享资源参与进来提供某种fencing机制的前提下，我们仍然不能够获得足够的安全性。<strong>后面我会结合Hadoop的fencing机制讲一下常见的fencing策略</strong></li>
+</ul>
+<h3 id="分布式锁的实现"><a href="#分布式锁的实现" class="headerlink" title="分布式锁的实现"></a>分布式锁的实现</h3><h4 id="基于Redis的单key"><a href="#基于Redis的单key" class="headerlink" title="基于Redis的单key"></a>基于Redis的单key</h4><p>获取锁：</p>
+<blockquote>
+<p>SET resource_name my_random_value NX PX 30000</p>
+</blockquote>
+<p>上面命令的含义：</p>
+<ul>
+<li>my_random_value是由客户端生成的一个随机字符串，它要保证在足够长的一段时间内在所有客户端的所有获取锁的请求中都是唯一的</li>
+<li>NX表示只有当resource_name对应的key值不存在的时候才能SET成功。这保证了只有第一个请求的客户端才能获得锁，而其它客户端在锁被释放之前都无法获得锁</li>
+<li>PX 30000表示这个锁有一个30秒的自动过期时间</li>
+</ul>
+<p>释放锁：</p>
+<p>伪代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if redis.call(&quot;get&quot;,KEYS[1]) == ARGV[1] then</div><div class="line">    return redis.call(&quot;del&quot;,KEYS[1])</div><div class="line">else</div><div class="line">    return 0</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>这段Lua脚本在执行的时候要把前面的my_random_value作为ARGV[1]的值传进去，把resource_name作为KEYS[1]的值传进去</p>
+<p>肯定一堆问题，因为没有办法在网络环境保证原子性，详细的分析可以看看原文。</p>
+<h4 id="基于Redis多key的RedLock"><a href="#基于Redis多key的RedLock" class="headerlink" title="基于Redis多key的RedLock"></a>基于Redis多key的RedLock</h4><p>antirez提出了新的分布式锁的算法：Redlock。上一个锁的问题，除了网络以及程序暂停等问题外，还有一个问题就是由Redis的failover引起的。</p>
+<p>假如Redis节点宕机切换到slave节点，但是，我们知道数据复制是有延迟的，这就可能造成在failover的过程中丧失锁的安全性：</p>
+<ol>
+<li>客户端1从Master获取了锁。</li>
+<li>Master宕机了，存储锁的key还没有来得及同步到Slave上。</li>
+<li>Slave升级为Master。</li>
+<li>客户端2从新的Master获取到了对应同一个资源的锁</li>
+</ol>
+<p>RedLock的基本思想就是通过多个Key的获取来避免failover的问题，大概过程：</p>
+<ol>
+<li>获取当前时间</li>
+<li>按顺序依次向N个Redis节点执行获取锁的操作</li>
+<li>计算整个获取锁的过程总共消耗了多长时间，计算方法是用当前时间减去第1步记录的时间</li>
+<li>如果最终获取锁成功了，那么这个锁的有效时间应该重新计算，它等于最初的锁的有效时间减去第3步计算出来的获取锁消耗的时间</li>
+<li>如果最终获取锁失败则释放锁</li>
+</ol>
+<p>详细的算法可以可以看看原文，总之，RedLock算法认为一个Redis Key不靠谱，那就是使用多个Key，获取多个Key的大多数的时候，认为获取锁成功；多个Key的获取增加网络延迟，于是利用本地时间来计算总的超时时间（这也就是被Martin喷的最惨的地方：依赖于本地记时的同步模型）</p>
+<p>这个锁看起来就不靠谱，太过复杂而没有解决根本问题（程序暂停啊等），Martin的评价是：</p>
+<blockquote>
+<p>neither fish nor fowl （非驴非马）</p>
+</blockquote>
+<h4 id="基于Zookeeper的临时节点"><a href="#基于Zookeeper的临时节点" class="headerlink" title="基于Zookeeper的临时节点"></a>基于Zookeeper的临时节点</h4><p>方案如下：</p>
+<ul>
+<li>客户端尝试创建一个znode节点，比如/lock。那么第一个客户端就创建成功了，相当于拿到了锁；而其它的客户端会创建失败（znode已存在），获取锁失败。</li>
+<li>持有锁的客户端访问共享资源完成后，将znode删掉，这样其它客户端接下来就能来获取锁了。</li>
+<li>znode应该被创建成ephemeral的。这是znode的一个特性，它保证如果创建znode的那个客户端崩溃了，那么相应的znode会被自动删除。这保证了锁一定会被释放。</li>
+</ul>
+<p>借助于ZK的session机制来维持锁的持有状态，就不会遇到跟Redis一样的锁的有效时间的问题。但是，该方案（以及下面的方案和上面的两个redis的方案）都会遇到<strong>脑裂</strong>的问题：</p>
+<ol>
+<li>客户端1创建了znode节点/lock，获得了锁。</li>
+<li>客户端1进入了长时间的GC pause。</li>
+<li>客户端1连接到ZooKeeper的Session过期了。znode节点/lock被自动删除。</li>
+<li>客户端2创建了znode节点/lock，从而获得了锁。</li>
+<li>客户端1从GC pause中恢复过来，它仍然认为自己持有锁。</li>
+</ol>
+<p>要解决脑裂问题，就要依赖于后面要讲的fencing机制。</p>
+<h4 id="基于Zookeeper的临时有序节点"><a href="#基于Zookeeper的临时有序节点" class="headerlink" title="基于Zookeeper的临时有序节点"></a>基于Zookeeper的临时有序节点</h4><p>上面的方案会造成<strong>惊群效应</strong>，Hadoop上有一个更好的<a href="http://zookeeper.apache.org/doc/r3.4.9/recipes.html#sc_recipes_Locks" target="_blank" rel="external">方案</a>，另外，我看了下curator的源码，跟这个方案很类似。</p>
+<ol>
+<li>在ZK上创建临时有序节点：<em>locknode</em>/lock-</li>
+<li>获取该节点的所有children，只获取不监听该节点变化（避免惊群效应）</li>
+<li>对children节点排序，如果当前节点是最小的节点，则获取锁成功，并退出获取锁流程</li>
+<li>否则，调用exists退出并监听比自己小的下一个节点的变化。</li>
+</ol>
+<p>该方案下，节点的移除只会唤醒一个客户端，避免了惊群效应。但也意味着，整个锁的获取是有序的，类似于Java本地的公平锁</p>
+<h3 id="Fencing机制"><a href="#Fencing机制" class="headerlink" title="Fencing机制"></a>Fencing机制</h3><p>上面已经讲了，即使使用ZK来实现分布式锁，还是会面临脑裂的问题。Martin提出了使用fencing token的机制来保护被访问资源，下面我先总结下Hadoop的fencing机制，对比一下。</p>
+<h4 id="Hadoop的Fencing机制"><a href="#Hadoop的Fencing机制" class="headerlink" title="Hadoop的Fencing机制"></a>Hadoop的Fencing机制</h4><p>Hadoop 2.0对NameNode引入了HA机制，整个HA的流程可以参考<a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-hadoop-name-node/" target="_blank" rel="external">原文</a>,我这里主要总结下Fencing机制。</p>
+<p>下面是整体的高可用架构，Hadoop 2.0对NameNode增加了主备机制</p>
+<p><img src="/images/middleware/distributed-lock-01.png" alt=""></p>
+<p>下面是主备切换的流程：</p>
+<p><img src="/images/middleware/distributed-lock-02.png" style="width:400px"></p>
+<p>从该流程可以看出，NameNode选主依赖于ZK，就像上面流程，一旦出现Master假死，就有可能引起脑裂。那Hadoop是怎么处理的呢？</p>
+<p>Hadoop的处理流程如下：</p>
+<p><img src="/images/middleware/hadoop-nn-fencing－01.png" alt=""></p>
+<p>主要有下面几个步骤：</p>
+<ol>
+<li>Master被选为主</li>
+<li>Master会在ZK上写一个持久型节点，将自己的地址信息写在里面</li>
+<li>如果Master正常退出，会删除持久节点；其他情况，Slave监控到了Master退出，会进入Slave激活的流程</li>
+<li>Slave首先会看一下有没有上一个Master留下来的持久节点，如果有，那么意味着老的Master可能处于假死状态</li>
+<li>Slave尝试将老的Master停掉（fencing机制），具体可以通过预留的rpc端口，ssh登陆，shel等</li>
+<li>Slave停掉老的Master之后，自己切换到Master状态</li>
+</ol>
+<h4 id="Fencing策略"><a href="#Fencing策略" class="headerlink" title="Fencing策略"></a>Fencing策略</h4><p>对比于Matin提到的fencing token机制（受保护资源只接收最新token的访问），hadoop的fencing机制工程上更实用一些，不需要一个全局继增的token生成器。总的说来，fencing有两种策略：</p>
+<ol>
+<li>将访问资源的Host给拦截掉。就像Hadoop的机制，出现脑裂的时候，会通过一种策略找到老的Master，然后干掉老的Master</li>
+<li>将访问资源本身跟保护起来。访问资源访问的时候，需要通过类似于token（严格继增）的机制，将老的token访问给过滤掉。该方案可以借助于ZK的顺序节点，Master获取锁的时候，顺便把节点的id作为token。</li>
+</ol>
+<h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><p>建议大家看看原文，里面列举了好多case会造成分布式锁的失败。在一个分布式的环境里面，异步才是王道。</p>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://lishoubo.github.io/2017/07/17/关于分布式锁/" data-id="cj57m60j900069is6sn8vi980" class="article-share-link">分享到</a><div class="tags"><a href="/tags/分布式/">分布式</a><a href="/tags/学习/">学习</a></div><div class="post-nav"><a href="/2017/07/10/性能优化-偏向锁/" class="next">性能优化-偏向锁</a></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© 如果，我有能力，可以让时间倒流。。。 </div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
