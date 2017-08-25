@@ -3,6 +3,26 @@
 
 
     
+  <url>
+    <loc>https://lishoubo.github.io/2017/04/28/%E6%9E%B6%E6%9E%84-%E7%94%BB%E5%87%A0%E5%BC%A0%E6%9E%B6%E6%9E%84%E5%9B%BE/</loc>
+    <lastmod>2017-08-25T10:01:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>架构-画几张架构图</title>
+        <pubTime>2017-04-28T03:39:48.000Z</pubTime>
+        
+        <tag>架构</tag>
+         
+         
+           
+             
+              <breadCrumb title="思考" url="https://lishoubo.github.io/categories/%E6%80%9D%E8%80%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://lishoubo.github.io/2017/08/25/%E6%8E%92%E6%9F%A5CPU%E5%81%8F%E9%AB%98%E5%BC%95%E8%B5%B7%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/</loc>
@@ -344,28 +364,6 @@
         <tag>GC</tag>
          
         <tag>内存</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lishoubo.github.io/2017/04/28/%E6%9E%B6%E6%9E%84-%E7%94%BB%E5%87%A0%E5%BC%A0%E6%9E%B6%E6%9E%84%E5%9B%BE/</loc>
-    <lastmod>2017-07-13T09:41:03.000Z</lastmod>
-    <data>
-        <display>
-        <title>架构-画几张架构图</title>
-        <pubTime>2017-04-28T03:39:48.000Z</pubTime>
-        
-        <tag>架构</tag>
-         
-        <tag>思考</tag>
          
          
            
