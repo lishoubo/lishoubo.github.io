@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lishoubo.github.io/favorite/index.html</loc>
+    
+    <lastmod>2017-11-27T06:32:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lishoubo.github.io/2017/11/03/%E5%85%B3%E4%BA%8ENetty%E7%9A%84OutOfDirectMemoryError/</loc>
     
     <lastmod>2017-11-03T07:54:47.000Z</lastmod>
@@ -96,13 +103,6 @@
     <loc>https://lishoubo.github.io/2017/08/02/%E8%AF%BB%E4%B9%A6-%E6%B0%B8%E6%81%92%E7%9A%84%E7%BB%88%E7%BB%93/</loc>
     
     <lastmod>2017-08-02T10:27:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lishoubo.github.io/favorite/index.html</loc>
-    
-    <lastmod>2017-07-26T06:14:16.000Z</lastmod>
     
   </url>
   
