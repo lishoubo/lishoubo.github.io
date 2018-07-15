@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="中间件, 高可用, 架构, 读书"><title>全链路压测的大概思路 | Lost</title><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script>var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?5c504f7ca80d4d57db5434656761512d";
+var s = document.getElementsByTagName("script")[0]; 
+s.parentNode.insertBefore(hm, s);
+})();
+</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">全链路压测的大概思路</h1><a id="logo" href="/.">Lost</a><p class="description">朽骨暗夜，侯多时，你已徘徊多远?</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/favorite/"><i class="fa fa-star"> 收藏</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://lishoubo.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/思考/">思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/Netty/" style="font-size: 15px;">Netty</a> <a href="/tags/GC/" style="font-size: 15px;">GC</a> <a href="/tags/架构/" style="font-size: 15px;">架构</a> <a href="/tags/高可用/" style="font-size: 15px;">高可用</a> <a href="/tags/性能/" style="font-size: 15px;">性能</a> <a href="/tags/文件/" style="font-size: 15px;">文件</a> <a href="/tags/PageCache/" style="font-size: 15px;">PageCache</a> <a href="/tags/实时处理/" style="font-size: 15px;">实时处理</a> <a href="/tags/大数据/" style="font-size: 15px;">大数据</a> <a href="/tags/flink/" style="font-size: 15px;">flink</a> <a href="/tags/netty/" style="font-size: 15px;">netty</a> <a href="/tags/问题排查/" style="font-size: 15px;">问题排查</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/压测/" style="font-size: 15px;">压测</a> <a href="/tags/内存/" style="font-size: 15px;">内存</a> <a href="/tags/分布式/" style="font-size: 15px;">分布式</a> <a href="/tags/学习/" style="font-size: 15px;">学习</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/科幻/" style="font-size: 15px;">科幻</a> <a href="/tags/心理/" style="font-size: 15px;">心理</a> <a href="/tags/一般/" style="font-size: 15px;">一般</a> <a href="/tags/思考/" style="font-size: 15px;">思考</a> <a href="/tags/小说/" style="font-size: 15px;">小说</a> <a href="/tags/推荐/" style="font-size: 15px;">推荐</a> <a href="/tags/历史/" style="font-size: 15px;">历史</a> <a href="/tags/人类/" style="font-size: 15px;">人类</a> <a href="/tags/思维/" style="font-size: 15px;">思维</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/15/全链路压测的大概思路/">全链路压测的大概思路</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/02/一个加锁粒度引起的问题/">一个加锁粒度引起的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/03/关于Netty的OutOfDirectMemoryError/">关于Netty的OutOfDirectMemoryError</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/读书-活着/">读书-活着</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/两阶段加锁/">两阶段加锁</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/MappedByteBuffer的一点优化/">MappedByteBuffer的一点优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/21/读书-银河帝国基地七部曲/">读书-银河帝国基地七部曲</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/20/flink实时分析的几点总结/">flink实时分析的几点总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/31/流处理中反压问题/">大流量下的反压问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/排查CPU偏高引起的一点思考/">排查CPU偏高引起的一点思考</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 链接</i></div><ul></ul><a href="http://jm.taobao.org" title="阿里中间件团队博客" target="_blank">阿里中间件团队博客</a><ul></ul><a href="http://martin.kleppmann.com/" title="分布式专家Martin的博客" target="_blank">分布式专家Martin的博客</a><ul></ul><a href="http://www.mdjs.info/" title="水东居士的茶水间，偏大数据方面" target="_blank">水东居士的茶水间，偏大数据方面</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">全链路压测的大概思路</h1><div class="post-meta">Jul 15, 2018<span> | </span><span class="category"><a href="/categories/技术/">技术</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><div class="post-content"><p>参与了我们业务的全链路压测，虽然过程磕磕绊绊，压测的当天晚上还在写压测脚本，但是核心链路的压测还是做了起来，效果也不错，当前晚上就爆出了一个P1级的bug。这篇文章就总结下如何做核心链路的全链路压测。</p>
+<h3 id="时机"><a href="#时机" class="headerlink" title="时机"></a>时机</h3><p>首先要清楚的一点就是，什么时候开始做全链路压测？我们有另外一个业务线，现在就没有打算做，那个业务线的日均单不到十万，而要压测的业务线的日均单到了200万，但这并不意味着200万是一个标准，我觉得可以从下面几点考虑：</p>
+<ul>
+<li>业务发展速度。在可以预期的一段时间（最好是半年，一个季度有点晚）内，业务会有较快速的发展，线上机器必须要大幅度扩容；但是，扩容有的时候并不是线性的，从两台扩展到四台，你得服务能力或者能提高两倍，但是在继续扩容，服务能力就有可能提高不上去了，因为要受限于其他的模块，比如，DB，公共组建，中间件等等</li>
+<li>链路的复杂程度在扩张。一般而言，随着业务的发展，我们的接口会越来越多，系统会逐渐的做分布式，业务线内部的模块越抽象越多，业务线跟其他业务线的交互也也越来越多，我们无法单纯的根据自己系统的处理能力来评估接口的服务能力。</li>
+<li>对单机压测结果越来越没有自信。这也是一个很好的指标，一般而言，我们都会压一下我们自己的模块，但是身为模块的owner，自己越来越清楚，单机的压测不代表真实的场景，内心会越来越虚，这个时候，就要考虑全链路了。</li>
+</ul>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>下面具体看看要做全链路需要哪些工作。</p>
+<h5 id="梳理核心链路的流程和边界"><a href="#梳理核心链路的流程和边界" class="headerlink" title="梳理核心链路的流程和边界"></a>梳理核心链路的流程和边界</h5><p>因为全链路一定会设计多个流程，多种技术，多个依赖，所以，要做全链路压测，首先要梳理核心链路的流程，明确链路的边界，我觉得梳理这个是比较简单的，因为一个业务再复杂，它的核心链路肯定有限，例如，我们的核心链路就包括：</p>
+<ul>
+<li>创建订单</li>
+<li>开始形成</li>
+<li>获取行程费用</li>
+<li>结束订单</li>
+<li>支付订单</li>
+<li>完单</li>
+</ul>
+<p>核心链路是一个业务的核心，这一块应该可以很快梳理清楚，但是，难点在于梳理清楚链路的边界。例如：</p>
+<ul>
+<li>开始订单要做风控</li>
+<li>结束订单要发券</li>
+<li>结束订单要通知用户费用</li>
+<li>完单后要通知营销</li>
+<li>。。。</li>
+</ul>
+<p>在核心链路的基础上，我们会有很多的分支业务，而这些分支业务有的可以参与压测，有的不能参与压测：原因多种多样，比如，这个分支业务不是我们自己公司的，或者这个分支业务本身就不怎么重要，可以降级掉，甚至有的业务就是不能压测，比如给用户下放push消息。</p>
+<p>在具体实施的时候，业务反复跟整个链路的每个业务owner反复确认，哪些是核心业务，哪些是分支业务，哪些参与压测，哪些不参与压测，把这些形成文档，逐个跟进。</p>
+<h5 id="提供全链路压测的底层支持"><a href="#提供全链路压测的底层支持" class="headerlink" title="提供全链路压测的底层支持"></a>提供全链路压测的底层支持</h5><p>要做全链路，要实现非核心链路的降级，就必须对底层的产品，例如中间件，数据库访问，MQ等做改动，让这些中间件支持全链路压测。我们整体看看，一般需要哪些改动。</p>
+<p>我们把模型简化一下，如下图，虽然是简化的，但是基本上包括主流的分布式业务的技术栈。</p>
+<p><img src="/images/tech/full-presure-01.png" alt=""></p>
+<p>可以看到，底层主要需要提供下面的支持：</p>
+<ul>
+<li>全链路透传压测标志：必须有一种在全链路透传压测标志的能力，并且必须基于一次请求，也就是同一个traceId，现在，大部分分布式业务都会接入trace系统，例如，google的dapper，阿里的鹰眼等，对trace系统进行改造，使其能够透传压测标志，需要透传的路径大概有：<ul>
+<li>HTTP,RPC(DUBBO),MQ,线程池等</li>
+</ul>
+</li>
+<li>影子表：参与压测的业务，要逐个排查自己依赖的数据库，然后创建影子表，影子表必须跟正常表的schema保持一致，可以在每次压测时候手动创建，也可以推动DBA自动创建。创建好影子表后，如果当前流量是压测流量，那么写入和读取都走影子表。如果有自己的数据库中间件最好，没有的话可以借助于Mybatis的Interceptor机制。</li>
+<li>日志-影子目录：为了防止压测流程的日志对正常日志造成干扰，需要改造日志组件，将压测流量产生的日志落入到影子目录。影子目录可以有日志组件自动创建。</li>
+<li>MQ支持是否消费压测流量：有的时候，全链路会通过MQ进行传递，所以，必须在消费MQ的时候进行选择：是否选择消费压测流量的MQ消息。这就需要对MQ系统进行改造，一方面使其可以透传压测流量，另一方面，需要支持配置是否消费压测的MQ消息</li>
+<li>缓存，大数据隔离：还有一些场景，比如，缓存层，大数据层对压测流量的处理也要考虑隔离。缓存可以使用不同的集群；大数据可以直接不收集压测的数据。</li>
+</ul>
+<h5 id="思考全链路压测的数据怎么mock"><a href="#思考全链路压测的数据怎么mock" class="headerlink" title="思考全链路压测的数据怎么mock"></a>思考全链路压测的数据怎么mock</h5><p>流程支持之后，还有关键的一步，就是考虑如何构造压测的mock数据。在使用影子表之后，可以比较轻松的实现跟正常数据隔离，那剩下的就是好构造好mock数据，有几点需要考虑：</p>
+<ul>
+<li>用户数据要提前做好认证等准备工作</li>
+<li>Mock数据要尽可能跟真实数据保持一致，比如，价格水平，图片数量，地址信息等等</li>
+<li>Mock数据有些限制需要放开，比如，库存，一些运营性质的活动可以取消等</li>
+<li>千万不要污染正常数据：认真梳理数据处理的每一个环节，确保mock数据的处理结果不会写入到正常库里面</li>
+</ul>
+<h5 id="做好压测流量的降级预案"><a href="#做好压测流量的降级预案" class="headerlink" title="做好压测流量的降级预案"></a>做好压测流量的降级预案</h5><p>这一点尤其重要，特别当业务特别的复杂的时候，一定要确认好，第三方依赖能不能接收压测流量，所以，只要依赖第三方的服务，我们都要接入压测流量降级的开关，防止对第三方服务的污染。实现上，可以集成到RPC机制上，也可以提供类似于单独的限流组件。</p>
+<h5 id="梳理监控体系"><a href="#梳理监控体系" class="headerlink" title="梳理监控体系"></a>梳理监控体系</h5><p>确认好流程的技术支持和Mock数据的支持后，还要让每个业务梳理自己的监控，确保压测时候能够准确，及时的发现问题。</p>
+<ul>
+<li>核心接口和核心依赖的流量和耗时监控</li>
+<li>中间件组件，缓存，数据库的监控报警</li>
+<li>机器的指标报警</li>
+</ul>
+<h5 id="线下做好预演"><a href="#线下做好预演" class="headerlink" title="线下做好预演"></a>线下做好预演</h5><p>真实的压测之前，肯定要进行预演，预演主要确认：</p>
+<ul>
+<li>压测流程是否写入到了正确的目的地，例如，写入到影子表，影子目录，压测cache等等</li>
+<li>压测流量的降级是否完备和有效</li>
+<li>进一步确保监控都已到位</li>
+</ul>
+<h5 id="尽量模拟现实"><a href="#尽量模拟现实" class="headerlink" title="尽量模拟现实"></a>尽量模拟现实</h5><p>我们压测的脚步要尽可能的模拟现实，比如：</p>
+<ul>
+<li>购买的行为：不是下单后立即购买，而是要等一下子</li>
+<li>骑车子的行为：开锁后并不是里面换车，而是骑一会</li>
+<li>用户付款的行为：压测时候肯定不会真的让用户付款，所以我们得模拟用户付款</li>
+<li>购买商品的数据</li>
+<li>。。。</li>
+</ul>
+<p>压测的脚步要跟各个业务确认，尽量跟线上真实的用户行为保持一致</p>
+<h5 id="逐步平滑加压"><a href="#逐步平滑加压" class="headerlink" title="逐步平滑加压"></a>逐步平滑加压</h5><p>压测的时候，逐步加压，并且要保持平滑加压，不要把一秒的流量都在前面几毫秒内都压出去。</p>
+<h5 id="形成报告"><a href="#形成报告" class="headerlink" title="形成报告"></a>形成报告</h5><p>每次压测后进行复盘，总结压测中的问题，压测结果，机器的指标等数据形成报告发给大家，制订好后续的Action以及跟进的负责人。</p>
+<h3 id="推进"><a href="#推进" class="headerlink" title="推进"></a>推进</h3><p>全链路压测的技术难点不多，除了要花时间梳理流程和思考如何处理数据之外，最难的就是整个链路跨多个业务，甚至部门，需要跟进每个业务线的进度，确保大家能够在给定的时间点进行联调以及进行压测。在推进的时候，按照核心链路所在的模块进行跟进，每个模块出一个owner，各个owner跟进核心的接口和依赖，每周大家碰一下同步下总体的进度。</p>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://lishoubo.github.io/2018/07/15/全链路压测的大概思路/" data-id="cjjmmbonf000pdtzv3vy36gkh" class="article-share-link">分享到</a><div class="tags"><a href="/tags/压测/">压测</a></div><div class="post-nav"><a href="/2018/02/02/一个加锁粒度引起的问题/" class="next">一个加锁粒度引起的问题</a></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© 如果，我有能力，可以让时间倒流。。。 </div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
