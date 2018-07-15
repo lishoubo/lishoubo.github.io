@@ -4,40 +4,64 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2018/02/02/%E4%B8%80%E4%B8%AA%E5%8A%A0%E9%94%81%E7%B2%92%E5%BA%A6%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2018-02-02T09:03:35.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2018/07/15/%E5%85%A8%E9%93%BE%E8%B7%AF%E5%8E%8B%E6%B5%8B%E7%9A%84%E5%A4%A7%E6%A6%82%E6%80%9D%E8%B7%AF/</loc>
+    <lastmod>2018-07-15T09:23:07.470Z</lastmod>
     <data>
         <display>
-        <title>一个加锁粒度引起的问题</title>
-        <pubTime>2018-02-02T08:24:36.000Z</pubTime>
+        <title>全链路压测的大概思路</title>
+        <pubTime>2018-07-15T08:40:39.000Z</pubTime>
+        
+        <tag>压测</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>https://lishoubo.github.io/2017/07/04/%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BB%9F%E8%AE%A1qps/</loc>
+    <lastmod>2018-07-15T08:00:21.918Z</lastmod>
+    <data>
+        <display>
+        <title>高并发统计qps</title>
+        <pubTime>2017-07-04T02:04:15.000Z</pubTime>
+        
+        <tag>性能</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>https://lishoubo.github.io/2017/04/29/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E9%81%BF%E5%85%8D%E9%99%B7%E5%85%A5%E5%B1%80%E9%83%A8%E8%A7%A3/</loc>
+    <lastmod>2018-07-15T08:00:21.917Z</lastmod>
+    <data>
+        <display>
+        <title>问题排查避免陷入局部解</title>
+        <pubTime>2017-04-29T07:02:17.000Z</pubTime>
         
         <tag>问题排查</tag>
          
          
            
              
-              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>https://lishoubo.github.io/2017/11/03/%E5%85%B3%E4%BA%8ENetty%E7%9A%84OutOfDirectMemoryError/</loc>
-    <lastmod>2017-11-03T07:54:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于Netty的OutOfDirectMemoryError</title>
-        <pubTime>2017-11-03T07:15:19.000Z</pubTime>
-        
-        <tag>Netty</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="思考" url="https://lishoubo.github.io/categories/%E6%80%9D%E8%80%83/"/>
           
         </display>
     </data>
@@ -45,56 +69,16 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/10/23/%E8%AF%BB%E4%B9%A6-%E6%B4%BB%E7%9D%80/</loc>
-    <lastmod>2017-10-23T11:03:39.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/06/28/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E7%BA%BF%E7%A8%8B%E5%AF%BC%E8%87%B4oom/</loc>
+    <lastmod>2018-07-15T08:00:21.917Z</lastmod>
     <data>
         <display>
-        <title>读书-活着</title>
-        <pubTime>2017-10-23T09:02:58.000Z</pubTime>
+        <title>问题排查线程导致oom</title>
+        <pubTime>2017-06-28T02:15:53.000Z</pubTime>
         
-        <tag>小说</tag>
+        <tag>问题排查</tag>
          
-         
-           
-             
-              <breadCrumb title="读书" url="https://lishoubo.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lishoubo.github.io/2017/05/07/%E8%AF%BB%E4%B9%A6-%E5%8D%83%E4%BA%BF%E4%B9%8B%E5%A4%9C%EF%BC%8D%E7%99%BE%E4%BA%BF%E4%B9%8B%E6%98%BC/</loc>
-    <lastmod>2017-10-23T09:04:19.000Z</lastmod>
-    <data>
-        <display>
-        <title>读书-千亿之夜－百亿之昼</title>
-        <pubTime>2017-05-07T13:08:18.000Z</pubTime>
-        
-        <tag>科幻</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书" url="https://lishoubo.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lishoubo.github.io/2017/10/23/%E4%B8%A4%E9%98%B6%E6%AE%B5%E5%8A%A0%E9%94%81/</loc>
-    <lastmod>2017-10-23T09:00:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>两阶段加锁</title>
-        <pubTime>2017-10-23T08:13:52.000Z</pubTime>
-        
-        <tag>性能</tag>
-         
-        <tag>数据库</tag>
+        <tag>Java</tag>
          
          
            
@@ -108,7 +92,7 @@
     
   <url>
     <loc>https://lishoubo.github.io/2017/08/09/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E4%B8%80%E6%AC%A1%E8%AF%A1%E5%BC%82%E7%9A%84rt%E6%8B%89%E9%AB%98%E7%8E%B0%E8%B1%A1/</loc>
-    <lastmod>2017-09-28T06:12:35.000Z</lastmod>
+    <lastmod>2018-07-15T08:00:21.917Z</lastmod>
     <data>
         <display>
         <title>问题排查一次诡异的rt拉高现象</title>
@@ -131,18 +115,56 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/09/27/MappedByteBuffer%E7%9A%84%E4%B8%80%E7%82%B9%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2017-09-28T06:12:33.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/07/09/%E8%AF%BB%E4%B9%A6%EF%BC%8D%E5%A5%87%E5%A6%99%E7%9A%84%E6%80%9D%E7%BB%B4%E5%AE%9E%E9%AA%8C/</loc>
+    <lastmod>2018-07-15T08:00:21.916Z</lastmod>
     <data>
         <display>
-        <title>MappedByteBuffer的一点优化</title>
-        <pubTime>2017-09-27T11:03:21.000Z</pubTime>
+        <title>读书－奇妙的思维实验</title>
+        <pubTime>2017-07-09T14:17:12.000Z</pubTime>
+        
+        <tag>思维</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="https://lishoubo.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lishoubo.github.io/2017/07/02/%E8%AF%BB%E4%B9%A6%EF%BC%8D%E5%9C%A3%E7%BB%8F%E6%95%85%E4%BA%8B%EF%BC%8D%E4%BB%A5%E8%89%B2%E5%88%97%E7%B3%BB%E5%88%97/</loc>
+    <lastmod>2018-07-15T08:00:21.916Z</lastmod>
+    <data>
+        <display>
+        <title>读书－圣经故事－以色列系列</title>
+        <pubTime>2017-07-02T13:15:34.000Z</pubTime>
+        
+        <tag>历史</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="https://lishoubo.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lishoubo.github.io/2017/06/25/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5RT%E6%8B%89%E9%95%BF/</loc>
+    <lastmod>2018-07-15T08:00:21.916Z</lastmod>
+    <data>
+        <display>
+        <title>问题排查RT拉长</title>
+        <pubTime>2017-06-25T11:58:54.000Z</pubTime>
         
         <tag>性能</tag>
          
-        <tag>文件</tag>
-         
-        <tag>PageCache</tag>
+        <tag>问题排查</tag>
          
          
            
@@ -156,7 +178,7 @@
     
   <url>
     <loc>https://lishoubo.github.io/2017/09/21/%E8%AF%BB%E4%B9%A6-%E9%93%B6%E6%B2%B3%E5%B8%9D%E5%9B%BD%E5%9F%BA%E5%9C%B0%E4%B8%83%E9%83%A8%E6%9B%B2/</loc>
-    <lastmod>2017-09-21T08:26:40.000Z</lastmod>
+    <lastmod>2018-07-15T08:00:21.915Z</lastmod>
     <data>
         <display>
         <title>读书-银河帝国基地七部曲</title>
@@ -175,127 +197,14 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/08/31/%E6%B5%81%E5%A4%84%E7%90%86%E4%B8%AD%E5%8F%8D%E5%8E%8B%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2017-09-21T04:07:12.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/07/02/%E8%AF%BB%E4%B9%A6%EF%BC%8D%E4%BA%BA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%A6%84%E6%83%B3%E7%97%87/</loc>
+    <lastmod>2018-07-15T08:00:21.915Z</lastmod>
     <data>
         <display>
-        <title>大流量下的反压问题</title>
-        <pubTime>2017-08-31T12:54:36.000Z</pubTime>
+        <title>读书－人人都有妄想症</title>
+        <pubTime>2017-07-02T14:14:54.000Z</pubTime>
         
-        <tag>大数据</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="思考" url="https://lishoubo.github.io/categories/%E6%80%9D%E8%80%83/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lishoubo.github.io/2017/09/20/flink%E5%AE%9E%E6%97%B6%E5%88%86%E6%9E%90%E7%9A%84%E5%87%A0%E7%82%B9%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2017-09-20T11:34:14.000Z</lastmod>
-    <data>
-        <display>
-        <title>flink实时分析的几点总结</title>
-        <pubTime>2017-09-20T11:23:28.000Z</pubTime>
-        
-        <tag>实时处理</tag>
-         
-        <tag>大数据</tag>
-         
-        <tag>flink</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lishoubo.github.io/2017/07/04/%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BB%9F%E8%AE%A1qps/</loc>
-    <lastmod>2017-09-01T07:21:15.000Z</lastmod>
-    <data>
-        <display>
-        <title>高并发统计qps</title>
-        <pubTime>2017-07-04T02:04:15.000Z</pubTime>
-        
-        <tag>性能</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lishoubo.github.io/2017/04/28/%E6%9E%B6%E6%9E%84-%E7%94%BB%E5%87%A0%E5%BC%A0%E6%9E%B6%E6%9E%84%E5%9B%BE/</loc>
-    <lastmod>2017-08-25T10:01:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>架构-画几张架构图</title>
-        <pubTime>2017-04-28T03:39:48.000Z</pubTime>
-        
-        <tag>架构</tag>
-         
-         
-           
-             
-              <breadCrumb title="思考" url="https://lishoubo.github.io/categories/%E6%80%9D%E8%80%83/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>https://lishoubo.github.io/2017/08/25/%E6%8E%92%E6%9F%A5CPU%E5%81%8F%E9%AB%98%E5%BC%95%E8%B5%B7%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/</loc>
-    <lastmod>2017-08-25T08:52:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>排查CPU偏高引起的一点思考</title>
-        <pubTime>2017-08-25T07:19:33.000Z</pubTime>
-        
-        <tag>性能</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="思考" url="https://lishoubo.github.io/categories/%E6%80%9D%E8%80%83/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lishoubo.github.io/2017/08/02/%E8%AF%BB%E4%B9%A6-%E6%B0%B8%E6%81%92%E7%9A%84%E7%BB%88%E7%BB%93/</loc>
-    <lastmod>2017-08-02T10:27:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>读书-永恒的终结</title>
-        <pubTime>2017-08-02T09:55:04.000Z</pubTime>
-        
-        <tag>科幻</tag>
-         
-        <tag>思考</tag>
+        <tag>推荐</tag>
          
          
            
@@ -308,43 +217,19 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/06/12/MQ%E4%B8%BB%E5%A4%87%E6%96%B9%E6%A1%88-%E7%BB%AD/</loc>
-    <lastmod>2017-07-22T08:59:46.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/05/14/%E8%AF%BB%E4%B9%A6-%E8%8D%89%E5%8E%9F%E5%8A%A8%E7%89%A9%E5%9B%AD/</loc>
+    <lastmod>2018-07-15T08:00:21.915Z</lastmod>
     <data>
         <display>
-        <title>MQ主备方案(续)</title>
-        <pubTime>2017-06-12T08:59:12.000Z</pubTime>
+        <title>读书-草原动物园</title>
+        <pubTime>2017-05-14T13:43:53.000Z</pubTime>
         
-        <tag>架构</tag>
-         
-        <tag>高可用</tag>
+        <tag>小说</tag>
          
          
            
              
-              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lishoubo.github.io/2017/06/11/MQ%E4%B8%BB%E5%A4%87%E6%96%B9%E6%A1%88/</loc>
-    <lastmod>2017-07-22T07:07:19.000Z</lastmod>
-    <data>
-        <display>
-        <title>MQ主备方案</title>
-        <pubTime>2017-06-11T09:38:02.000Z</pubTime>
-        
-        <tag>架构</tag>
-         
-        <tag>高可用</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="读书" url="https://lishoubo.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
           
         </display>
     </data>
@@ -353,7 +238,7 @@
     
   <url>
     <loc>https://lishoubo.github.io/2017/07/09/%E8%AF%BB%E4%B9%A6-%E7%AC%AC%E4%B8%89%E7%A7%8D%E9%BB%91%E7%8C%A9%E7%8C%A9/</loc>
-    <lastmod>2017-07-17T03:51:52.000Z</lastmod>
+    <lastmod>2018-07-15T08:00:21.915Z</lastmod>
     <data>
         <display>
         <title>读书-第三种黑猩猩</title>
@@ -376,13 +261,35 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/07/02/%E8%AF%BB%E4%B9%A6%EF%BC%8D%E4%BA%BA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%A6%84%E6%83%B3%E7%97%87/</loc>
-    <lastmod>2017-07-17T03:51:42.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/10/23/%E8%AF%BB%E4%B9%A6-%E6%B4%BB%E7%9D%80/</loc>
+    <lastmod>2018-07-15T08:00:21.914Z</lastmod>
     <data>
         <display>
-        <title>读书－人人都有妄想症</title>
-        <pubTime>2017-07-02T14:14:54.000Z</pubTime>
+        <title>读书-活着</title>
+        <pubTime>2017-10-23T09:02:58.000Z</pubTime>
         
+        <tag>小说</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="https://lishoubo.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lishoubo.github.io/2017/03/04/%E8%AF%BB%E4%B9%A6-%E7%99%BB%E5%A4%A9%E7%9A%84%E6%84%9F%E8%A7%89/</loc>
+    <lastmod>2018-07-15T08:00:21.914Z</lastmod>
+    <data>
+        <display>
+        <title>读书-登天的感觉</title>
+        <pubTime>2017-03-04T07:17:59.000Z</pubTime>
+        
+        <tag>心理</tag>
+         
         <tag>推荐</tag>
          
          
@@ -396,28 +303,8 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/07/02/%E8%AF%BB%E4%B9%A6%EF%BC%8D%E5%9C%A3%E7%BB%8F%E6%95%85%E4%BA%8B%EF%BC%8D%E4%BB%A5%E8%89%B2%E5%88%97%E7%B3%BB%E5%88%97/</loc>
-    <lastmod>2017-07-17T03:51:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>读书－圣经故事－以色列系列</title>
-        <pubTime>2017-07-02T13:15:34.000Z</pubTime>
-        
-        <tag>历史</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书" url="https://lishoubo.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://lishoubo.github.io/2017/03/04/%E8%AF%BB%E4%B9%A6-%E6%AC%A3%E8%B5%8F%E4%BD%A0%E7%9A%84%E5%A4%A7%E8%84%91/</loc>
-    <lastmod>2017-07-17T03:50:38.000Z</lastmod>
+    <lastmod>2018-07-15T08:00:21.914Z</lastmod>
     <data>
         <display>
         <title>读书-欣赏你的大脑</title>
@@ -438,16 +325,16 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/03/04/%E8%AF%BB%E4%B9%A6-%E7%99%BB%E5%A4%A9%E7%9A%84%E6%84%9F%E8%A7%89/</loc>
-    <lastmod>2017-07-17T03:50:32.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/08/02/%E8%AF%BB%E4%B9%A6-%E6%B0%B8%E6%81%92%E7%9A%84%E7%BB%88%E7%BB%93/</loc>
+    <lastmod>2018-07-15T08:00:21.914Z</lastmod>
     <data>
         <display>
-        <title>读书-登天的感觉</title>
-        <pubTime>2017-03-04T07:17:59.000Z</pubTime>
+        <title>读书-永恒的终结</title>
+        <pubTime>2017-08-02T09:55:04.000Z</pubTime>
         
-        <tag>推荐</tag>
+        <tag>科幻</tag>
          
-        <tag>心理</tag>
+        <tag>思考</tag>
          
          
            
@@ -460,14 +347,14 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/05/14/%E8%AF%BB%E4%B9%A6-%E8%8D%89%E5%8E%9F%E5%8A%A8%E7%89%A9%E5%9B%AD/</loc>
-    <lastmod>2017-07-17T03:50:28.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/05/07/%E8%AF%BB%E4%B9%A6-%E5%8D%83%E4%BA%BF%E4%B9%8B%E5%A4%9C%EF%BC%8D%E7%99%BE%E4%BA%BF%E4%B9%8B%E6%98%BC/</loc>
+    <lastmod>2018-07-15T08:00:21.913Z</lastmod>
     <data>
         <display>
-        <title>读书-草原动物园</title>
-        <pubTime>2017-05-14T13:43:53.000Z</pubTime>
+        <title>读书-千亿之夜－百亿之昼</title>
+        <pubTime>2017-05-07T13:08:18.000Z</pubTime>
         
-        <tag>小说</tag>
+        <tag>科幻</tag>
          
          
            
@@ -480,39 +367,13 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/07/17/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</loc>
-    <lastmod>2017-07-17T03:46:21.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/05/05/%E6%B3%A8%E6%84%8F%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%97%B6%E9%97%B4%E6%BC%82%E7%A7%BB/</loc>
+    <lastmod>2018-07-15T08:00:21.913Z</lastmod>
     <data>
         <display>
-        <title>关于分布式锁</title>
-        <pubTime>2017-07-17T03:46:20.000Z</pubTime>
+        <title>注意虚拟机时间漂移</title>
+        <pubTime>2017-05-05T08:36:26.000Z</pubTime>
         
-        <tag>学习</tag>
-         
-        <tag>分布式</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lishoubo.github.io/2017/03/21/netty-entry-fgc/</loc>
-    <lastmod>2017-07-16T07:12:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>netty-entry-fgc</title>
-        <pubTime>2017-03-21T07:20:27.000Z</pubTime>
-        
-        <tag>GC</tag>
-         
-        <tag>netty</tag>
-         
         <tag>问题排查</tag>
          
          
@@ -526,16 +387,38 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/04/15/CMSGC%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2017-07-16T07:10:00.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/08/31/%E6%B5%81%E5%A4%84%E7%90%86%E4%B8%AD%E5%8F%8D%E5%8E%8B%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-07-15T08:00:21.913Z</lastmod>
     <data>
         <display>
-        <title>CMSGC的一些问题</title>
-        <pubTime>2017-04-15T03:18:23.000Z</pubTime>
+        <title>大流量下的反压问题</title>
+        <pubTime>2017-08-31T12:54:36.000Z</pubTime>
         
-        <tag>GC</tag>
+        <tag>大数据</tag>
          
-        <tag>内存</tag>
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="思考" url="https://lishoubo.github.io/categories/%E6%80%9D%E8%80%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lishoubo.github.io/2017/07/04/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7TProfiler/</loc>
+    <lastmod>2018-07-15T08:00:21.912Z</lastmod>
+    <data>
+        <display>
+        <title>性能分析工具TProfiler</title>
+        <pubTime>2017-07-04T06:14:07.000Z</pubTime>
+        
+        <tag>性能</tag>
+         
+        <tag>工具</tag>
          
          
            
@@ -548,16 +431,80 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/04/14/ParNewGC%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2017-07-14T10:22:52.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/08/25/%E6%8E%92%E6%9F%A5CPU%E5%81%8F%E9%AB%98%E5%BC%95%E8%B5%B7%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/</loc>
+    <lastmod>2018-07-15T08:00:21.912Z</lastmod>
     <data>
         <display>
-        <title>ParNewGC的一些问题</title>
-        <pubTime>2017-04-14T10:18:23.000Z</pubTime>
+        <title>排查CPU偏高引起的一点思考</title>
+        <pubTime>2017-08-25T07:19:33.000Z</pubTime>
         
-        <tag>GC</tag>
+        <tag>性能</tag>
          
-        <tag>内存</tag>
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="思考" url="https://lishoubo.github.io/categories/%E6%80%9D%E8%80%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lishoubo.github.io/2017/04/28/%E6%9E%B6%E6%9E%84-%E7%94%BB%E5%87%A0%E5%BC%A0%E6%9E%B6%E6%9E%84%E5%9B%BE/</loc>
+    <lastmod>2018-07-15T08:00:21.912Z</lastmod>
+    <data>
+        <display>
+        <title>架构-画几张架构图</title>
+        <pubTime>2017-04-28T03:39:48.000Z</pubTime>
+        
+        <tag>架构</tag>
+         
+         
+           
+             
+              <breadCrumb title="思考" url="https://lishoubo.github.io/categories/%E6%80%9D%E8%80%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lishoubo.github.io/2017/07/17/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</loc>
+    <lastmod>2018-07-15T08:00:21.911Z</lastmod>
+    <data>
+        <display>
+        <title>关于分布式锁</title>
+        <pubTime>2017-07-17T03:46:20.000Z</pubTime>
+        
+        <tag>分布式</tag>
+         
+        <tag>学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lishoubo.github.io/2017/07/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E5%81%8F%E5%90%91%E9%94%81/</loc>
+    <lastmod>2018-07-15T08:00:21.911Z</lastmod>
+    <data>
+        <display>
+        <title>性能优化-偏向锁</title>
+        <pubTime>2017-07-10T07:26:16.000Z</pubTime>
+        
+        <tag>性能</tag>
+         
+        <tag>Java</tag>
          
          
            
@@ -571,7 +518,7 @@
     
   <url>
     <loc>https://lishoubo.github.io/2017/05/12/%E5%BE%AE%E4%BF%A1%E7%BA%A2%E5%8C%85%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F%E5%8F%AF%E7%94%A8%E6%80%A7%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2017-07-12T12:09:57.000Z</lastmod>
+    <lastmod>2018-07-15T08:00:21.911Z</lastmod>
     <data>
         <display>
         <title>学习-微信红包后台系统可用性设计</title>
@@ -594,16 +541,16 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/07/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E5%81%8F%E5%90%91%E9%94%81/</loc>
-    <lastmod>2017-07-12T10:21:05.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/10/23/%E4%B8%A4%E9%98%B6%E6%AE%B5%E5%8A%A0%E9%94%81/</loc>
+    <lastmod>2018-07-15T08:00:21.910Z</lastmod>
     <data>
         <display>
-        <title>性能优化-偏向锁</title>
-        <pubTime>2017-07-10T07:26:16.000Z</pubTime>
+        <title>两阶段加锁</title>
+        <pubTime>2017-10-23T08:13:52.000Z</pubTime>
         
         <tag>性能</tag>
          
-        <tag>Java</tag>
+        <tag>数据库</tag>
          
          
            
@@ -616,12 +563,32 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/05/05/%E6%B3%A8%E6%84%8F%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%97%B6%E9%97%B4%E6%BC%82%E7%A7%BB/</loc>
-    <lastmod>2017-07-12T10:20:52.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/11/03/%E5%85%B3%E4%BA%8ENetty%E7%9A%84OutOfDirectMemoryError/</loc>
+    <lastmod>2018-07-15T08:00:21.910Z</lastmod>
     <data>
         <display>
-        <title>注意虚拟机时间漂移</title>
-        <pubTime>2017-05-05T08:36:26.000Z</pubTime>
+        <title>关于Netty的OutOfDirectMemoryError</title>
+        <pubTime>2017-11-03T07:15:19.000Z</pubTime>
+        
+        <tag>Netty</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lishoubo.github.io/2018/02/02/%E4%B8%80%E4%B8%AA%E5%8A%A0%E9%94%81%E7%B2%92%E5%BA%A6%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-07-15T08:00:21.910Z</lastmod>
+    <data>
+        <display>
+        <title>一个加锁粒度引起的问题</title>
+        <pubTime>2018-02-02T08:24:36.000Z</pubTime>
         
         <tag>问题排查</tag>
          
@@ -636,16 +603,88 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/07/04/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7TProfiler/</loc>
-    <lastmod>2017-07-12T10:20:33.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/03/21/netty-entry-fgc/</loc>
+    <lastmod>2018-07-15T08:00:21.910Z</lastmod>
     <data>
         <display>
-        <title>性能分析工具TProfiler</title>
-        <pubTime>2017-07-04T06:14:07.000Z</pubTime>
+        <title>netty-entry-fgc</title>
+        <pubTime>2017-03-21T07:20:27.000Z</pubTime>
+        
+        <tag>GC</tag>
+         
+        <tag>netty</tag>
+         
+        <tag>问题排查</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lishoubo.github.io/2017/04/14/ParNewGC%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-07-15T08:00:21.909Z</lastmod>
+    <data>
+        <display>
+        <title>ParNewGC的一些问题</title>
+        <pubTime>2017-04-14T10:18:23.000Z</pubTime>
+        
+        <tag>GC</tag>
+         
+        <tag>内存</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lishoubo.github.io/2017/09/20/flink%E5%AE%9E%E6%97%B6%E5%88%86%E6%9E%90%E7%9A%84%E5%87%A0%E7%82%B9%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2018-07-15T08:00:21.909Z</lastmod>
+    <data>
+        <display>
+        <title>flink实时分析的几点总结</title>
+        <pubTime>2017-09-20T11:23:28.000Z</pubTime>
+        
+        <tag>实时处理</tag>
+         
+        <tag>大数据</tag>
+         
+        <tag>flink</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lishoubo.github.io/2017/09/27/MappedByteBuffer%E7%9A%84%E4%B8%80%E7%82%B9%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2018-07-15T08:00:21.909Z</lastmod>
+    <data>
+        <display>
+        <title>MappedByteBuffer的一点优化</title>
+        <pubTime>2017-09-27T11:03:21.000Z</pubTime>
         
         <tag>性能</tag>
          
-        <tag>工具</tag>
+        <tag>文件</tag>
+         
+        <tag>PageCache</tag>
          
          
            
@@ -658,16 +697,16 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/06/25/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5RT%E6%8B%89%E9%95%BF/</loc>
-    <lastmod>2017-07-12T10:20:21.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/06/12/MQ%E4%B8%BB%E5%A4%87%E6%96%B9%E6%A1%88-%E7%BB%AD/</loc>
+    <lastmod>2018-07-15T08:00:21.908Z</lastmod>
     <data>
         <display>
-        <title>问题排查RT拉长</title>
-        <pubTime>2017-06-25T11:58:54.000Z</pubTime>
+        <title>MQ主备方案(续)</title>
+        <pubTime>2017-06-12T08:59:12.000Z</pubTime>
         
-        <tag>性能</tag>
+        <tag>架构</tag>
          
-        <tag>问题排查</tag>
+        <tag>高可用</tag>
          
          
            
@@ -680,16 +719,16 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/06/28/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E7%BA%BF%E7%A8%8B%E5%AF%BC%E8%87%B4oom/</loc>
-    <lastmod>2017-07-12T10:20:03.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/06/11/MQ%E4%B8%BB%E5%A4%87%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2018-07-15T08:00:21.908Z</lastmod>
     <data>
         <display>
-        <title>问题排查线程导致oom</title>
-        <pubTime>2017-06-28T02:15:53.000Z</pubTime>
+        <title>MQ主备方案</title>
+        <pubTime>2017-06-11T09:38:02.000Z</pubTime>
         
-        <tag>问题排查</tag>
+        <tag>架构</tag>
          
-        <tag>Java</tag>
+        <tag>高可用</tag>
          
          
            
@@ -702,40 +741,21 @@
 
     
   <url>
-    <loc>https://lishoubo.github.io/2017/07/09/%E8%AF%BB%E4%B9%A6%EF%BC%8D%E5%A5%87%E5%A6%99%E7%9A%84%E6%80%9D%E7%BB%B4%E5%AE%9E%E9%AA%8C/</loc>
-    <lastmod>2017-07-09T14:30:46.000Z</lastmod>
+    <loc>https://lishoubo.github.io/2017/04/15/CMSGC%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-07-15T08:00:21.908Z</lastmod>
     <data>
         <display>
-        <title>读书－奇妙的思维实验</title>
-        <pubTime>2017-07-09T14:17:12.000Z</pubTime>
+        <title>CMSGC的一些问题</title>
+        <pubTime>2017-04-15T03:18:23.000Z</pubTime>
         
-        <tag>思维</tag>
+        <tag>GC</tag>
+         
+        <tag>内存</tag>
          
          
            
              
-              <breadCrumb title="读书" url="https://lishoubo.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>https://lishoubo.github.io/2017/04/29/%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E9%81%BF%E5%85%8D%E9%99%B7%E5%85%A5%E5%B1%80%E9%83%A8%E8%A7%A3/</loc>
-    <lastmod>2017-04-29T08:08:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>问题排查避免陷入局部解</title>
-        <pubTime>2017-04-29T07:02:17.000Z</pubTime>
-        
-        <tag>问题排查</tag>
-         
-         
-           
-             
-              <breadCrumb title="思考" url="https://lishoubo.github.io/categories/%E6%80%9D%E8%80%83/"/>
+              <breadCrumb title="技术" url="https://lishoubo.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
